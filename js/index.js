@@ -5,11 +5,11 @@
 //task3
 let flower = "rose";
 let tree = "oak";
-console.log(flower)
-console.log(tree)
+console.log(flower);
+console.log(tree);
 flower = tree;
-console.log(flower)
-console.log(tree)
+console.log(flower);
+console.log(tree);
 
 //task4
 
@@ -19,7 +19,7 @@ let myNewObj = {
     "Boolean": true,
     "Undefined": undefined,
     "Null": null 
-}
+};
 
 //task5
 
@@ -28,18 +28,24 @@ alert( isAdult );
 
 //task6
 
-const myFirstname = Serhiy;
-const myLastname = Pop;
+const myFirstname = "Serhiy";
+const myLastname = "Pop";
 const myStudyGroup = "Lv-678.JS Core";
 const myBirthYear = 1987;
 
-let myMaritalStatus;
-myMaritalStatus = Married;
+let myMaritalStatus = "Married";
+myMaritalStatus = true;
 
 console.log(typeof myBirthYear);
-
+console.log(typeof myMaritalStatus);
 console.log(typeof myFirstname);
 console.log(typeof myLastname);
 console.log(typeof myStudyGroup);
 
-console.log(typeof myMaritalStatus);
+let recordType = "LP";
+recordType = null;
+
+let playerType;
+
+console.log(typeof recordType);
+console.log(typeof playerType);
