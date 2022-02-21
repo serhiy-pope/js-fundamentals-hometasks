@@ -54,23 +54,20 @@ console.log(typeof playerType);
 
 //task7
 
-    let name = prompt("Dear ", "User");
-    alert(name);
-    name = prompt("your email is ", "usermail@gmail.com");
-    alert(name);
-    name = prompt("your password is ", "qwerty");
-    alert(name);
+let name; 
+prompt("Dear ", "User");
+prompt("Your email is ", "usermail@gmail.com");
+prompt("Your password is ", "qwerty");
+name = "Dear User, your email is usermail@gmail.com, your password is qwerty";
+alert(name);
 
 //task8
 
-let secondsInOneHour;
-secondsInHour = 60 * 60;
-alert(secondsInHour);
+let secondsInOneHour = 60 * 60;
+alert(secondsInOneHour);
 
-let secondsIn24Hours;
-secondsIn24Hours = 60* 60 * 24;
+let secondsIn24Hours = 60* 60 * 24;
 alert(secondsIn24Hours);
 
-let secondsInOneMonth;
-secondsInOneMonth = 60 * 60 * 24 * 30;
+let secondsInOneMonth = 60 * 60 * 24 * 30;
 alert(secondsInOneMonth);
