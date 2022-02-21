@@ -1,15 +1,17 @@
 //task2
 
-//alert("Pop");
+alert("Pop");
 
 //task3
-let flower = "rose";
-let tree = "oak";
-console.log(flower);
-console.log(tree);
-flower = tree;
-console.log(flower);
-console.log(tree);
+let redFlower; 
+redFlower = "Poppy";
+let yellowFlower;
+yellowFlower = "Sunflower";
+console.log(redFlower);
+console.log(yellowFlower);
+redFlower = yellowFlower;
+console.log(redFlower);
+console.log(yellowFlower);
 
 //task4
 
@@ -49,3 +51,26 @@ let playerType;
 
 console.log(typeof recordType);
 console.log(typeof playerType);
+
+//task7
+
+    let name = prompt("Dear ", "User");
+    alert(name);
+    name = prompt("your email is ", "usermail@gmail.com");
+    alert(name);
+    name = prompt("your password is ", "qwerty");
+    alert(name);
+
+//task8
+
+let secondsInOneHour;
+secondsInHour = 60 * 60;
+alert(secondsInHour);
+
+let secondsIn24Hours;
+secondsIn24Hours = 60* 60 * 24;
+alert(secondsIn24Hours);
+
+let secondsInOneMonth;
+secondsInOneMonth = 60 * 60 * 24 * 30;
+alert(secondsInOneMonth);
