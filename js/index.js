@@ -99,14 +99,14 @@ console.log(typeof res4);
                                  //task2
 let someNumber;
 someNumber = prompt("Check if number is: a) Even positive; b) Multiple of seven", "Enter number here");
-console.log(someNumber % 2 < 1);
+console.log(someNumber % 2 < 1 && someNumber >= 0);
 console.log(someNumber % 7 === 0);
 
                                  //task3
 let myArr = [1, "space", true, null];
 alert(myArr.length);
 
-let enterVal = prompt("Enter your number");
+let enterVal = prompt("Enter any number to add it to the array");
 myArr.push(enterVal);
 console.log(myArr[4]);
 
@@ -161,10 +161,10 @@ if (currHour >= 23 && currHour < 5) {
 alert(greetMessage)
 
 //second method
-let currHour = new Date().getHours();
-let greetMessage;
-(currHour >= 23 && currHour < 5) ? greetMessage = "Good night" :
-(currHour >= 5 && currHour < 11) ? greetMessage = "Good morning" :
-(currHour >= 11 && currHour < 17) ? greetMessage = "Good day" :
-greetMessage = "Good evening";
-alert(greetMessage);
+let currHour2 = new Date().getHours();
+let greetMessage2;
+(currHour2 >= 23 && currHour2 < 5) ? greetMessage2 = "Good night" :
+(currHour2 >= 5 && currHour2 < 11) ? greetMessage2 = "Good morning" :
+(currHour2 >= 11 && currHour2 < 17) ? greetMessage2 = "Good day" :
+greetMessage2 = "Good evening";
+alert(greetMessage2);
