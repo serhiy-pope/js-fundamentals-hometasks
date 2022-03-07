@@ -141,7 +141,7 @@ let triangleArea = Math.sqrt(
 );
 triangleArea = triangleArea.toFixed(3);
 if (side1 > 0 && side2 > 0 && side3 > 0) {
-  console.log(triangleArea);
+  console.log("The triangle area is " + triangleArea);
 } else {
   console.log("Incorrect data");
 }
