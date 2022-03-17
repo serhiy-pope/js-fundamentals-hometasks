@@ -1,4 +1,4 @@
-/*                              // First Hometask:
+/* // First Hometask:
                                         //task2
 
 alert("Pop");
@@ -178,17 +178,16 @@ currHour2 >= 23 && currHour2 < 5
   : (greetMessage2 = "Good evening");
 alert(greetMessage2); */
 
-/* // Third hometask
+// Third hometask
 
 //task1
-
 //for-loop
 let forArr = [2, 3, 4, 5];
 let total = 1;
 for (i = 0; i < forArr.length; i++) {
-  total *= forArr[i]
+  total *= forArr[i];
 }
-console.log(total)
+console.log(total);
 
 //while-loop
 let whileArr = [2, 3, 4, 5];
@@ -199,7 +198,6 @@ while (i < whileArr.length) {
   i++;
 }
 console.log(total);
-
 
 //task2
 let oddEvenArr = [];
@@ -224,6 +222,7 @@ for (let i = 0; i < 5; i++) {
   k[i] = randArray(k);
 }
 console.log(k);
+
 //second-method
 function randArray(k) {
   return Math.floor(Math.random() * 500);
@@ -236,12 +235,9 @@ for (let i = 0; i < 5; i++) {
 console.log(k1);
 
 //task4
-
 function raiseToDegree(a, b) {
   a = prompt("Enter a number to raise to degree");
   b = prompt("Enter a degree value");
   return a ** b;
 }
-console.log(raiseToDegree()); */
-
-
+console.log(raiseToDegree());
