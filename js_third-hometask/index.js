@@ -6,7 +6,7 @@
 //for-loop
 let forArr = [2, 3, 4, 5];
 let total = 1;
-for (i = 0; i < forArr.length; i++) {
+for (let i = 0; i < forArr.length; i++) {
   total *= forArr[i];
 }
 console.log(total);
