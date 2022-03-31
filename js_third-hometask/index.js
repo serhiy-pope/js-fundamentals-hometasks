@@ -1,6 +1,5 @@
 //******************** Third hometask *********************
 
-
 //************************* task1 *************************
 
 //for-loop
@@ -21,7 +20,6 @@ while (i < whileArr.length) {
 }
 console.log(total);
 
-
 //************************* task2 *************************
 let oddEvenArr = [];
 for (let i = 0; i < 16; i++) {
@@ -33,7 +31,6 @@ for (let i = 0; i < 16; i++) {
   }
 }
 console.log(oddEvenArr);
-
 
 //************************* task3 *************************
 
@@ -69,8 +66,45 @@ console.log(raiseToDegree());
 
 //************************* task5 *************************
 function findMin() {
-    return arguments[Math.min];
+  minimum = arguments[0];
+  for (let i = 0; i < arguments.length; i++) {
+    if (minimum > arguments[i]) {
+      minimum = arguments[i];
+    }
   }
-  findMin(12, 14, 4, -4, 0.2);
-  console.log(findMin());
-  
+  return minimum;
+}
+findMin(12, 14, 4, -4, 0.2);
+
+//************************* task6 *************************
+function findUnique() {
+  let k = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    for (let j = 0; j < arguments.length; j++) {
+      if (arguments[i] == arguments[j]) {
+        k++;
+      }
+    }
+  }
+  if (k == arguments.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+//************************* task7 *************************
+function lastElem(myArray, number) {
+  if (number == 1) {
+    let lastNumber = myArray.length;
+    return myArray[lastNumber];
+  }
+  if (number >= myArray.length) {
+    return myArray;
+  }
+  let startPosition = myArray.length - number + 1;
+  for (let i = startPosition; i <= myArray.length; i++) {
+    console.log(myArray[i]);
+  }
+}
+lastElem([3, 4, 10, -5], 2);
