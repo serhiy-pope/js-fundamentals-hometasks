@@ -77,6 +77,7 @@ function findMin() {
 findMin(12, 14, 4, -4, 0.2);
 
 //************************* task6 *************************
+//first method
 function findUnique() {
   let k = 0;
   for (let i = 0; i < arguments.length; i++) {
@@ -92,19 +93,37 @@ function findUnique() {
     return false;
   }
 }
+//second method
+function findUnique(array) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] === array[j]) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
 
 //************************* task7 *************************
-function lastElem(myArray, number) {
-  if (number == 1) {
-    let lastNumber = myArray.length;
-    return myArray[lastNumber];
-  }
-  if (number >= myArray.length) {
-    return myArray;
-  }
-  let startPosition = myArray.length - number + 1;
-  for (let i = startPosition; i <= myArray.length; i++) {
-    console.log(myArray[i]);
+function lastElem(arr, count) {
+  if (count == null) {
+    console.log(arr.pop());
+  } else {
+    console.log(arr.slice(-count));
   }
 }
-lastElem([3, 4, 10, -5], 2);
+console.log(lastElem([3, 4, 10, -5]));
+console.log(lastElem([3, 4, 10, -5], 2));
+console.log(lastElem([3, 4, 10, -5], 8));
+
+//************************* task8 *************************
+function bigFirstLetters(str) {
+  const newArray = str.split(" ");
+  const newArray1 = [];
+  for (i = 0; i < newArray.length; i++) {
+    newArray1.push(newArray[i].charAt(0).toUpperCase() + newArray[i].slice(1));
+  }
+  return newArray1.join(" ");
+}
+console.log(bigFirstLetters("i love java script"));
