@@ -35,12 +35,16 @@ try {
 
 //************************* task4 *************************
 function showUser(id) {
-  if (id < 0) {
-    alert("Error: ID must not be negative:" + id);
-  } else {
-    id = {
-      userID: id,
-    };
+  try {
+    if (id > 0) {
+      id = {
+        userID: id,
+      };
+    } else {
+      throw Error("ID must not be negative: " + id);
+    }
+  } catch (error) {
+    alert(error.name + " " + error.message);
   }
   return id;
 }
@@ -48,10 +52,8 @@ function showUser(id) {
 function showUsers(ids) {
   let arrOfObjects = [];
   for (let i = 0; i < ids.length; i++) {
-    showUser(ids[i]);
-    arrOfObjects.push(showUser());
+    arrOfObjects.push(showUser(ids[i]));
   }
   console.log(arrOfObjects);
 }
-showUsers([12, 34, 56, 78]);
-
+showUsers([7, -12, 44, 22]);
