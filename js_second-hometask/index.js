@@ -1,4 +1,4 @@
-//******************** Second Hometask ********************
+/* //******************** Second Hometask ********************
 
 //************************* task1 *************************
 let x = 1;
@@ -98,3 +98,4 @@ currHour2 >= 23 || currHour2 < 5
   : currHour2 >= 11 && currHour2 < 17
   ? alert("Good day")
   : (alert("Good evening"));
+ */

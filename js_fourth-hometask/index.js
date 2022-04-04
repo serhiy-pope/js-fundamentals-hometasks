@@ -12,30 +12,46 @@ try {
 
 //************************* task2 *************************
 function checkAge(userAge) {
-    userAge = prompt ("Enter your age");
-    if (userAge > 14) {
-        alert("You are allowed to see this movie. Click 'here' to continue!")
-    } else {
-        alert("The field is empty! Please enter your age")
-    } 
+  userAge = prompt("Enter your age");
+  if (userAge > 14) {
+    alert("You are allowed to see this movie. Click 'Ok' to continue!");
+  } else {
+    throw userAge;
+  }
 }
 try {
-    checkAge();
-} catch (error) {
-    alert("SyntaxError")
+  checkAge();
+} catch (userAge) {
+  if (userAge == "") {
+    alert("The field is empty! Please enter your age.");
+  } else if (userAge < 14) {
+    alert("Error! You haven't reached the age of 14.");
+  } else {
+    alert("Error! Entered value is not a number.");
+  }
 }
 
-/* try {
-    checkAge();
-} catch (error) {
-    if(userAge != Number) {
-        alert("Error! The value is Not a number.")
+//************************* task3 *************************
+
+//************************* task4 *************************
+function showUser(id) {
+  if (id < 0) {
+    alert("Error: ID must not be negative:" + id);
+  } else {
+    id = {
+      userID: id,
+    };
+  }
+  return id;
 }
+
+function showUsers(ids) {
+  let arrOfObjects = [];
+  for (let i = 0; i < ids.length; i++) {
+    showUser(ids[i]);
+    arrOfObjects.push(showUser());
+  }
+  console.log(arrOfObjects);
 }
-try {
-    checkAge();
-} catch (error) {
-    if(userAge < 14) {
-        alert("You haven't reached the of 14")
-    }
-} */
+showUsers([12, 34, 56, 78]);
+

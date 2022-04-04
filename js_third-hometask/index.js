@@ -1,4 +1,4 @@
-//******************** Third hometask *********************
+/* //******************** Third hometask *********************
 
 //************************* task1 *************************
 
@@ -127,3 +127,4 @@ function bigFirstLetters(str) {
   return newArray1.join(" ");
 }
 console.log(bigFirstLetters("i love java script"));
+ */

@@ -1,4 +1,4 @@
-//******************** First Hometask *********************
+/* //******************** First Hometask *********************
 
 //************************* task2 *************************
 alert("Pop");
@@ -72,3 +72,4 @@ alert(secondsIn24Hours);
 
 let secondsInOneMonth = secondsIn24Hours * 30;
 alert(secondsInOneMonth);
+ */
