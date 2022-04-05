@@ -2,12 +2,16 @@
 
 //************************* task1 *************************
 function calcRectangleArea(width, height) {
-  return width * height;
+  if (isNaN(width) || isNaN(height)) {
+    throw Error("Incorrect data");
+  } else {
+    return width * height;
+  }
 }
 try {
-  calcRectangleArea(5, e);
+  calcRectangleArea(5, "e");
 } catch (error) {
-  alert("Incorrect data");
+  alert(error);
 }
 
 //************************* task2 *************************
@@ -15,45 +19,41 @@ function checkAge(userAge) {
   userAge = prompt("Enter your age");
   if (userAge > 14) {
     alert("You are allowed to see this movie. Click 'Ok' to continue!");
+  } else if (userAge == "") {
+    throw Error("The field is empty! Please enter your age.");
+  } else if (userAge < 14) {
+    throw Error("You haven't reached the age of 14.");
   } else {
-    throw userAge;
+    throw Error("Entered value is not a number.");
   }
 }
 try {
   checkAge();
-} catch (userAge) {
-  if (userAge == "") {
-    alert("The field is empty! Please enter your age.");
-  } else if (userAge < 14) {
-    alert("Error! You haven't reached the age of 14.");
-  } else {
-    alert("Error! Entered value is not a number.");
-  }
+} catch (Error) {
+  alert(Error);
 }
 
 //************************* task3 *************************
 
 //************************* task4 *************************
 function showUser(id) {
-  try {
-    if (id > 0) {
-      id = {
-        userID: id,
-      };
-    } else {
-      throw Error("ID must not be negative: " + id);
-    }
-  } catch (error) {
-    alert(error.name + " " + error.message);
+  if (id < 0) {
+    throw Error("ID must not be negative: " + id);
+  } else {
+    return { userID: id };
   }
-  return id;
 }
 
 function showUsers(ids) {
   let arrOfObjects = [];
-  for (let i = 0; i < ids.length; i++) {
-    arrOfObjects.push(showUser(ids[i]));
-  }
+  ids.forEach(function(id) {
+    try {
+      let user = showUser(id);
+      arrOfObjects.push(user);
+    } catch (Error) {
+      console.log(Error);
+    }
+  });
   console.log(arrOfObjects);
 }
 showUsers([7, -12, 44, 22]);
