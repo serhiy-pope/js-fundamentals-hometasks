@@ -90,15 +90,24 @@ class Worker {
     return this.fullName + " salary: " + salaryExp;
   }
 }
-let worker1 = new Worker("John Johnson", 20, 23);
-console.log(worker1.fullName);
-worker1.showSalary();
-console.log("New experience: " + worker1.showExp);
-worker1.showSalaryWithExperience();
-worker1.setExp = 1.5;
-console.log("New experience: " + worker1.showExp);
-worker1.showSalaryWithExperience();
 
-let worker2 = new Worker("Tom Tompson", 48, 22);
+//-------------------------------------Task 4-----------------------------
 
-let worker3 = new Worker("Andy Anderson", 29, 23);
+class GeometricFigure {
+  getArea() {
+    return 0;
+  }
+  toString() {
+    return Object.getPrototypeOf(this).constructor.name;
+  }
+}
+
+class Triangle {
+  constructor () {
+
+  }
+}
+
+class Square {}
+
+class Circle {}

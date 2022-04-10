@@ -34,6 +34,41 @@ try {
 }
 
 //************************* task3 *************************
+class MonthException {
+  constructor(message) {
+    this.message = message;
+    this.name = "MonthException";
+  }
+}
+function showMonthName(month) {
+  month = month - 1;
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  if (months[month] !== undefined) {
+    return months[month];
+  } else {
+    throw new MonthException("Incorrect month number");
+  }
+}
+try {
+  let myMonth = 4;
+  let monthName = showMonthName(myMonth);
+  console.log(monthName);
+} catch (e) {
+  console.error(e.name, e.message);
+}
 
 //************************* task4 *************************
 function showUser(id) {
@@ -46,7 +81,7 @@ function showUser(id) {
 
 function showUsers(ids) {
   let arrOfObjects = [];
-  ids.forEach(function(id) {
+  ids.forEach(function (id) {
     try {
       let user = showUser(id);
       arrOfObjects.push(user);
