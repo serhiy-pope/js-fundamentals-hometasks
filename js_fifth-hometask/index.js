@@ -55,13 +55,13 @@ class Student extends Person {
     //super.showFullName();
   }
   showCourse() {
-    let currentYear = 2020;
+    let currentYear = new Date().getFullYear();
     let currentCourse = currentYear - this.year;
     return currentCourse;
   }
 }
 
-let stud1 = new Student("Petro", "Petrenko", 2015);
+let stud1 = new Student("Petro", "Petrenko", 2019);
 stud1.showFullName("Petrovych");
 stud1.showCourse();
 
