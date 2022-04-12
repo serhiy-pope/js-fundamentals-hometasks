@@ -128,12 +128,44 @@ class GeometricFigure {
   }
 }
 
-class Triangle {
-  constructor () {
+class Triangle extends GeometricFigure {
+  constructor(base, height) {
+    super();
+    this.base = base;
+    this.height = height;
+  }
 
+  getArea() {
+    return (this.base * this.height) / 2;
   }
 }
 
-class Square {}
+class Square extends GeometricFigure {
+  constructor(a) {
+    super();
+    this.a = a;
+  }
+  getArea() {
+    return this.a ** 2;
+  }
+}
 
-class Circle {}
+class Circle extends GeometricFigure {
+  constructor(radius) {
+    super();
+    this.radius = radius;
+  }
+  getArea() {
+    return Math.PI * this.radius ** 2;
+  }
+}
+
+function handleFigures(figures) {
+  return figures.reduce(function(sum, figure) {
+    if (figure instanceof GeometricFigure) {
+      console.log(`Geometric figure: ${figure.toString()} - area: ${figure.getArea()}`);
+      return sum + figure.getArea();
+    }
+    throw Error("Bad argument figure");
+  }, 0);
+}

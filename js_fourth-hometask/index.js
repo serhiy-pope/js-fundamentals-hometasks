@@ -1,4 +1,4 @@
-//******************** Fourth hometask *********************
+/* //******************** Fourth hometask *********************
 
 //************************* task1 *************************
 function calcRectangleArea(width, height) {
@@ -92,3 +92,4 @@ function showUsers(ids) {
   console.log(arrOfObjects);
 }
 showUsers([7, -12, 44, 22]);
+ */
