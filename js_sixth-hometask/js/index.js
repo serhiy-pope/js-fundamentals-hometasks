@@ -1,22 +1,53 @@
 //******************** Sixth hometask *********************
 
 //-------------------------------------Task 1-----------------------------
-//let id = (document.getElementById("test").innerHTML = "Last");
-//alert(id);
+let id = (document.getElementById("test").innerHTML = "Last");
+alert(id);
 
-//document.body.children[0].innerHTML = "Last1111";
-//alert(document.body.children[0].innerHTML);
-
-//document.body.firstChild.innerHTML = "Last";
-//alert(document.body.firstChild.innerHTML);
-
-//let tagName = (document.getElementsByTagName("div").innerHTML = "Last");
-//alert(tagName);
+document.body.children[0].innerHTML = "Last1111";
+alert(document.body.children[0].innerHTML);
 
 //-------------------------------------Task 2-----------------------------
-//let img = (document.body.getElementsByClassName("image").src = "/img/cat.jpeg");
-//alert(img);
+let img = (document.body.getElementsByClassName("image").src = "/js_sixth-hometask/img/cat.jpeg");
+alert(img);
 
 //-------------------------------------Task 3-----------------------------
-let p = document.querySelectorAll("div.text").childNodes;
-alert(p);
+let pArr = [];
+let p = document.querySelectorAll("#text > p");
+for (let i = 0; i < p.length; i++) {
+    pArr.push(p[i])
+    console.log("Selector text " + [i] + ": " + pArr[i].innerHTML);
+}
+
+//-------------------------------------Task 4-----------------------------
+//fistMethod
+console.log(document.getElementById("list").firstElementChild.innerHTML);
+console.log(document.getElementById("list").lastElementChild.innerHTML);
+console.log(document.getElementById("list").firstElementChild.nextElementSibling.innerHTML);
+console.log(document.getElementById("list").lastElementChild.previousElementSibling.innerHTML);
+console.log(document.getElementById("list").children[2].innerHTML);
+
+//secondMethod
+console.log(document.getElementById("list").children[0].innerHTML);
+console.log(document.getElementById("list").children[4].innerHTML);
+console.log(document.getElementById("list").children[1].innerHTML);
+console.log(document.getElementById("list").children[3].innerHTML);
+console.log(document.getElementById("list").children[2].innerHTML);
+
+//-------------------------------------Task 5-----------------------------
+document.body.children[6].style.backgroundColor = "yellowgreen";
+
+myDiv.firstElementChild.style.fontWeight = "bold";
+
+myDiv.children[1].style.color = "red";
+
+myDiv.children[2].style.textDecoration = "underline";
+
+myDiv.children[3].style.fontStyle = "italic";
+
+document.body.children[9].style.display = "none";
+
+//-------------------------------------Task 6-----------------------------
+
+
+//-------------------------------------Task 7-----------------------------
