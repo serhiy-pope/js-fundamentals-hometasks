@@ -8,9 +8,9 @@ document.body.children[0].innerHTML = "Last1111";
 alert(document.body.children[0].innerHTML);
 
 //-------------------------------------Task 2-----------------------------
-let img = (document.body.getElementsByClassName("image").src =
-  "/js_sixth-hometask/img/cat.jpeg");
-alert(img);
+let img = document.getElementsByClassName("image")[0];
+img.src = "/img/cat.jpeg";
+alert(img.outerHTML);
 
 //-------------------------------------Task 3-----------------------------
 let pArr = [];
@@ -31,7 +31,10 @@ console.log(
   document.getElementById("list").lastElementChild.previousElementSibling
     .innerHTML
 );
-console.log(document.getElementById("list").children[2].innerHTML);
+console.log(
+  document.getElementById("list").firstElementChild.nextElementSibling
+    .nextElementSibling.innerHTML
+);
 
 //secondMethod
 console.log(document.getElementById("list").children[0].innerHTML);
@@ -51,6 +54,9 @@ myDiv.children[2].style.textDecoration = "underline";
 
 myDiv.children[3].style.fontStyle = "italic";
 
+myList.style.listStyle = "none";
+myList.style.display = "flex";
+
 document.body.children[9].style.display = "none";
 
 //-------------------------------------Task 6-----------------------------
@@ -69,3 +75,9 @@ function changePlaces(a, b) {
 changePlaces(input1, input2);
 
 //-------------------------------------Task 7-----------------------------
+
+document.body.innerHTML = `<main class="mainClass check item"> 	
+    <div id="myDiv">
+        <p>First paragraph</p>           
+    </div>
+</main>`;
