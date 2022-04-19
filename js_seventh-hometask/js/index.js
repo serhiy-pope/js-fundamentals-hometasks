@@ -18,9 +18,7 @@ function closeWin() {
 }
 
 setTimeout(() => {
-  openWin();
-  setTimeout(() => {
-    resizeWin();
+    openWin();
     setTimeout(() => {
       moveWin();
       setTimeout(() => {
@@ -28,7 +26,6 @@ setTimeout(() => {
       }, 2000);
     }, 2000);
   }, 2000);
-}, 2000);
 
 //-------------------------------------Task 2-----------------------------
 function changeCSS() {
@@ -63,7 +60,7 @@ myLink.addEventListener("mouseout", changeWhite);
 
 //-------------------------------------Task 4-----------------------------
 function removeListElem() {
-  namesToDelete.removeChild(namesToDelete.firstChild);
+  namesToDelete.removeChild(namesToDelete.selectedIndex);
 }
 deleteBtn.addEventListener("click", removeListElem);
 
@@ -113,62 +110,30 @@ window.addEventListener("resize", getWindowWidth);
 window.addEventListener("resize", getWindowHeight);
 
 //-------------------------------------Task 7-----------------------------
-function createGermanCitiesList() {
-  let germanCities = ["Frankfurt", "Berlin", "Kohln"];
-
-  let select = document.createElement("select");
-  select.name = "gerCities";
-  select.id = "gerCities";
-
-  for (let gerCity of germanCities) {
-    let option = document.createElement("option");
-    option.value = gerCity;
-    option.text = gerCity.charAt(0).toUpperCase() + gerCity.slice(1);
-    select.appendChild(option);
+const cityArr = {
+    'ger': ['Berlin', 'Hamburg', 'Dortmund', 'Frankfurt'],
+    'usa': ['New-York', 'Washington', 'Boston', 'Chicago'],
+    'ukr': ['Kyiv', 'Lviv', 'Odesa', 'Dnipro']
   }
-  document.getElementById("cities").appendChild(select);
-}
-
-function createUSACitiesList() {
-  let usaCities = ["New York", "Chicago", "Miami"];
-
-  let select = document.createElement("select");
-  select.name = "usaCities";
-  select.id = "usaCities";
-
-  for (let usaCity of usaCities) {
-    let option = document.createElement("option");
-    option.value = usaCity;
-    option.text = usaCity.charAt(0).toUpperCase() + usaCity.slice(1);
-    select.appendChild(option);
+  let prime_select = document.getElementById('country');
+  prime_select.addEventListener('change', createList);
+  prime_select.addEventListener('change', toParagraph);
+  
+  let city_select = document.getElementById('cities');
+  city_select.addEventListener('change', toParagraph);
+  
+  function createList() {
+    city_select.innerHTML = "";
+    let selected_country = prime_select.value;
+    for (let i = 0; i < cityArr[selected_country].length; i++) {
+      let new_option = document.createElement('option');
+      new_option.innerHTML = cityArr[selected_country][i];
+      city_select.appendChild(new_option);
+    }
+  };
+  
+  let parag = document.querySelector('p');
+  function toParagraph() {
+    parag.innerHTML = "";
+    parag.innerHTML = prime_select.options[prime_select.selectedIndex].text + ', ' + city_select.options[city_select.selectedIndex].text;
   }
-  document.getElementById("cities").appendChild(select);
-}
-
-function createUACitiesList() {
-  let uaCities = ["Kyiv", "Lviv", "Odesa"];
-
-  let select = document.createElement("select");
-  select.name = "uaCities";
-  select.id = "uaCities";
-
-  for (let uaCity of uaCities) {
-    let option = document.createElement("option");
-    option.value = uaCity;
-    option.text = uaCity.charAt(0).toUpperCase() + uaCity.slice(1);
-    select.appendChild(option);
-  }
-  document.getElementById("cities").appendChild(select);
-}
-
-if (document.body.firstElementChild.children[0].innerHTML == "Germany") {
-  createGermanCitiesList();
-}
-
-if (document.body.firstElementChild.children[1].innerHTML == "USA") {
-  createUSACitiesList();
-}
-
-if (document.body.firstElementChild.children[2].innerHTML == "Ukraine") {
-  createUACitiesList();
-}
