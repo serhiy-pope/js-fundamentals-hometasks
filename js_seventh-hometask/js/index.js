@@ -63,7 +63,7 @@ myLink.addEventListener("mouseout", changeWhite);
 
 //-------------------------------------Task 4-----------------------------
 function removeListElem() {
-  namesToDelete.removeChild(namesToDelete.firstChild);
+  namesToDelete.removeChild(namesToDelete.selectedIndex);
 }
 deleteBtn.addEventListener("click", removeListElem);
 
