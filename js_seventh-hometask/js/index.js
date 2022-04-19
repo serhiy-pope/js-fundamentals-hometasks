@@ -18,14 +18,14 @@ function closeWin() {
 }
 
 setTimeout(() => {
-    openWin();
+  openWin();
+  setTimeout(() => {
+    moveWin();
     setTimeout(() => {
-      moveWin();
-      setTimeout(() => {
-        closeWin();
-      }, 2000);
+      closeWin();
     }, 2000);
   }, 2000);
+}, 2000);
 
 //-------------------------------------Task 2-----------------------------
 function changeCSS() {
@@ -111,29 +111,32 @@ window.addEventListener("resize", getWindowHeight);
 
 //-------------------------------------Task 7-----------------------------
 const cityArr = {
-    'ger': ['Berlin', 'Hamburg', 'Dortmund', 'Frankfurt'],
-    'usa': ['New-York', 'Washington', 'Boston', 'Chicago'],
-    'ukr': ['Kyiv', 'Lviv', 'Odesa', 'Dnipro']
+  ger: ["Berlin", "Hamburg", "Dortmund", "Frankfurt"],
+  usa: ["New-York", "Washington", "Boston", "Chicago"],
+  ukr: ["Kyiv", "Lviv", "Odesa", "Dnipro"],
+};
+let prime_select = document.getElementById("country");
+prime_select.addEventListener("change", createList);
+prime_select.addEventListener("change", toParagraph);
+
+let city_select = document.getElementById("cities");
+city_select.addEventListener("change", toParagraph);
+
+function createList() {
+  city_select.innerHTML = "";
+  let selected_country = prime_select.value;
+  for (let i = 0; i < cityArr[selected_country].length; i++) {
+    let new_option = document.createElement("option");
+    new_option.innerHTML = cityArr[selected_country][i];
+    city_select.appendChild(new_option);
   }
-  let prime_select = document.getElementById('country');
-  prime_select.addEventListener('change', createList);
-  prime_select.addEventListener('change', toParagraph);
-  
-  let city_select = document.getElementById('cities');
-  city_select.addEventListener('change', toParagraph);
-  
-  function createList() {
-    city_select.innerHTML = "";
-    let selected_country = prime_select.value;
-    for (let i = 0; i < cityArr[selected_country].length; i++) {
-      let new_option = document.createElement('option');
-      new_option.innerHTML = cityArr[selected_country][i];
-      city_select.appendChild(new_option);
-    }
-  };
-  
-  let parag = document.querySelector('p');
-  function toParagraph() {
-    parag.innerHTML = "";
-    parag.innerHTML = prime_select.options[prime_select.selectedIndex].text + ', ' + city_select.options[city_select.selectedIndex].text;
-  }
+}
+
+let parag = document.querySelector("p");
+function toParagraph() {
+  parag.innerHTML = "";
+  parag.innerHTML =
+    prime_select.options[prime_select.selectedIndex].text +
+    ", " +
+    city_select.options[city_select.selectedIndex].text;
+}
