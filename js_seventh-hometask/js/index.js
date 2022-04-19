@@ -17,18 +17,18 @@ function closeWin() {
   myWindow.close();
 }
 
-/* setTimeout(() => {
-    openWin();
+setTimeout(() => {
+  openWin();
+  setTimeout(() => {
+    resizeWin();
     setTimeout(() => {
-      resizeWin();
+      moveWin();
       setTimeout(() => {
-        moveWin();
-        setTimeout(() => {
-          closeWin();
-        }, 2000);
+        closeWin();
       }, 2000);
     }, 2000);
-  }, 2000); */
+  }, 2000);
+}, 2000);
 
 //-------------------------------------Task 2-----------------------------
 function changeCSS() {
@@ -113,11 +113,62 @@ window.addEventListener("resize", getWindowWidth);
 window.addEventListener("resize", getWindowHeight);
 
 //-------------------------------------Task 7-----------------------------
-/*   function citiesOfCountry() {
-      if (document.getElementById("country") = "Germany") {
-          document.getElementById("cities") = 
-              <option value="ger">Francfurt</option>;
-              <option value="usa">Berlin</option>;
-              <option value="ukr">Kohln</option>;
-      }
-  } */
+function createGermanCitiesList() {
+  let germanCities = ["Frankfurt", "Berlin", "Kohln"];
+
+  let select = document.createElement("select");
+  select.name = "gerCities";
+  select.id = "gerCities";
+
+  for (let gerCity of germanCities) {
+    let option = document.createElement("option");
+    option.value = gerCity;
+    option.text = gerCity.charAt(0).toUpperCase() + gerCity.slice(1);
+    select.appendChild(option);
+  }
+  document.getElementById("cities").appendChild(select);
+}
+
+function createUSACitiesList() {
+  let usaCities = ["New York", "Chicago", "Miami"];
+
+  let select = document.createElement("select");
+  select.name = "usaCities";
+  select.id = "usaCities";
+
+  for (let usaCity of usaCities) {
+    let option = document.createElement("option");
+    option.value = usaCity;
+    option.text = usaCity.charAt(0).toUpperCase() + usaCity.slice(1);
+    select.appendChild(option);
+  }
+  document.getElementById("cities").appendChild(select);
+}
+
+function createUACitiesList() {
+  let uaCities = ["Kyiv", "Lviv", "Odesa"];
+
+  let select = document.createElement("select");
+  select.name = "uaCities";
+  select.id = "uaCities";
+
+  for (let uaCity of uaCities) {
+    let option = document.createElement("option");
+    option.value = uaCity;
+    option.text = uaCity.charAt(0).toUpperCase() + uaCity.slice(1);
+    select.appendChild(option);
+  }
+  document.getElementById("cities").appendChild(select);
+}
+
+if (document.body.firstElementChild.children[0].innerHTML == "Germany") {
+  createGermanCitiesList();
+}
+
+if (document.body.firstElementChild.children[1].innerHTML == "USA") {
+  createUSACitiesList();
+}
+
+if (document.body.firstElementChild.children[2].innerHTML == "Ukraine") {
+  createUACitiesList();
+}
