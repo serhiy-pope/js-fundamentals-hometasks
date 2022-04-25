@@ -1,3 +1,5 @@
+//******************** Fifth hometask *********************
+
 //-------------------------------------Task 1-----------------------------
 
 function propsCount(currentObject) {
@@ -66,6 +68,7 @@ stud1.showFullName("Petrovych");
 stud1.showCourse();
 
 //-------------------------------------Task 4-----------------------------
+let workersList = [];
 
 class Worker {
   #experience = 1.2;
@@ -80,6 +83,7 @@ class Worker {
     this.fullName = fullName;
     this.dayRate = dayRate;
     this.workingDays = workingDays;
+    workersList.push(this);
   }
   showSalary() {
     let salary = this.dayRate * this.workingDays;
@@ -88,6 +92,19 @@ class Worker {
   showSalaryWithExperience() {
     let salaryExp = this.dayRate * this.workingDays * this.#experience;
     return this.fullName + " salary: " + salaryExp;
+  }
+  showSalaryWorker() {
+    return `${this.dayRate * this.workingDays * this.#experience}`;
+  }
+  sortSalaries(workersArray) {
+    let sortedSalary = workersArray.sort(function (a, b) {
+      return a.showSalaryWorker() - b.showSalaryWorker();
+    });
+    for (let i = 0; i < sortedSalary.length; i++) {
+      console.log(
+        sortedSalary[i].fullName + ": " + sortedSalary[i].showSalaryWorker()
+      );
+    }
   }
 }
 let worker1 = new Worker("John Johnson", 20, 23);
@@ -161,9 +178,11 @@ class Circle extends GeometricFigure {
 }
 
 function handleFigures(figures) {
-  return figures.reduce(function(sum, figure) {
+  return figures.reduce(function (sum, figure) {
     if (figure instanceof GeometricFigure) {
-      console.log(`Geometric figure: ${figure.toString()} - area: ${figure.getArea()}`);
+      console.log(
+        `Geometric figure: ${figure.toString()} - area: ${figure.getArea()}`
+      );
       return sum + figure.getArea();
     }
     throw Error("Bad argument figure");

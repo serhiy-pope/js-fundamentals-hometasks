@@ -81,3 +81,7 @@ document.body.innerHTML = `<main class="mainClass check item">
         <p>First paragraph</p>           
     </div>
 </main>`;
+
+let myConsole;
+myConsole = 2+5;
+myConsole.console.log();

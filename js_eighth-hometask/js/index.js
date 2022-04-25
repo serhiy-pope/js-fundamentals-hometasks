@@ -22,19 +22,10 @@ checkEmail("Qmail2@gmail");
 checkEmail("Qmail2gmail.com");
 
 //-------------------------------------Task3-----------------------------
-/* function checkDB(randomStr) {
-  let result = /[dbd]/i.test(randomStr);
-  console.log(result);
-}
-checkDB("cdbBdbsbz"); */
-
 let str = "cdbBdbsbz";
 let str1 = /d{1}b+d{1}|bd{1}|d{1}/i;
 let result = str.match(str1);
 console.log(result);
-
-/* console.log(regExp.match(str1));
-console.log(regExp.match(str2)); */
 
 //-------------------------------------Task4-----------------------------
 let changePlaces = "Java Script";
@@ -50,7 +41,7 @@ function validateCardNumber() {
     console.log("Your card number is not correct");
   }
 }
-//validateCardNumber();
+validateCardNumber();
 
 //-------------------------------------Task6-----------------------------
 function checkEmail(emailAddress) {
@@ -78,7 +69,7 @@ function checkLogin(userLogin) {
   let findDigits = /\d/;
   let result = userLogin.search(findDigits);
   console.log(result);
-  
+
   if (userLogin.match(validateLogin)) {
     console.log(true);
   } else {
