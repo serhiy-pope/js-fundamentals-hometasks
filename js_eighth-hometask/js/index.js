@@ -23,7 +23,7 @@ checkEmail("Qmail2gmail.com");
 
 //-------------------------------------Task3-----------------------------
 let str = "cdbBdbsbz";
-let str1 = /d{1}b+d{1}|bd{1}|d{1}/i;
+let str1 = /d{1}b+d{1}|b+|d{1}/i;
 let result = str.match(str1);
 console.log(result);
 
@@ -64,18 +64,17 @@ checkEmail("my%mail@gmail.com");
 
 //-------------------------------------Task7-----------------------------
 function checkLogin(userLogin) {
-  let validateLogin = /^[^\d]\w{2,10}/;
-
-  let findDigits = /\d/;
-  let result = userLogin.search(findDigits);
-  console.log(result);
-
+  let validateLogin = /^\D[0-9a-zA-Z]{2,10}\.?[^\W]/;
   if (userLogin.match(validateLogin)) {
     console.log(true);
   } else {
     console.log(false);
-  }
+  }  
+  let findDigits = /([0-9]*[.])?[0-9]+/g;
+  let result = userLogin.match(findDigits).toString();
+  console.log(result);
 }
 
 checkLogin("ee1.1ret3");
 checkLogin("ee1*1ret3");
+checkLogin("1ee11ret3");
