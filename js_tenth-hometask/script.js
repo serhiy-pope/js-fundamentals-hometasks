@@ -12,11 +12,12 @@ let data = {
   names: ["Sam", "Tom", "Ray", "Bob"],
   ages: [20, 24, 22, 26],
 };
-let { names: name2, age2, ages: name4, age4 } = data;
-console.log(name2); // "Tom"
-console.log(age2); // 24
-console.log(name4); // "Bob"
-console.log(age4); // 26
+let [name1, name2, name3, name4] = data.names;
+let [age1, age2, age3, age4] = data.ages;
+console.log(name2);
+console.log(age2);
+console.log(name4);
+console.log(age4);
 
 //-------------------------------------Task3-----------------------------
 function mul(...rest) {
